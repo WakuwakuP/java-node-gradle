@@ -9,6 +9,8 @@ RUN set -x && \
     apt-get update && \
     apt-get install -y openjdk-8-jdk && \
     apt-get install -y curl nodejs npm gradle && \
+    apt-get install -y language-pack-ja && \
+    update-locale LANG=ja_JP.UTF-8 LANGUAGE=”ja_JP:ja” && \
     npm cache clean && \
     npm install n -g && \
     n 8.11.3 && \
