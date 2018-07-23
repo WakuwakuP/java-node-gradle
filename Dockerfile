@@ -14,13 +14,7 @@ RUN set -x && \
     n 8.11.3 && \
     apt-get purge -y nodejs npm && \
     ln -sf /usr/local/bin/node /usr/bin/node && \
-    ln -sf /usr/local/bin/npm /usr/bin/npm && \
-    groupadd --system --gid 1000 gradle && \
-    useradd --system --gid gradle --uid 1000 --shell /bin/bash --create-home gradle && \
-    mkdir /home/gradle/.gradle && \
-    chown --recursive gradle:gralde /home/gradle && \
-    ln -s /home/gradle/.gradle /root/.gradle
+    ln -sf /usr/local/bin/npm /usr/bin/npm
 
-USER gradle
-VOLUME "/home/gradle/.gradle"
-WORKDIR /home/gradle
+VOLUME "/usr/gradle/.gradle"
+WORKDIR /usr/gradle
